@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Future Heros</title>
+
+<style>
+:root{
+  --primary:#1E3A8A;
+  --gold:#FBBF24;
+  --bg:#F8FAFC;
+  --text:#1F2937;
+  --card:#ffffff;
+}
+
+body.dark{
+  --bg:#0f172a;
+  --text:#e5e7eb;
+  --card:#1e293b;
+}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+}
+
+/* HEADER */
+header{
+  background:var(--primary);
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+header h1{
+  margin:0;
+  font-size:32px;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  background:#0f2f6b;
+  padding:10px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:10px 15px;
+  font-weight:bold;
+}
+
+.controls{
+  text-align:center;
+  margin:10px;
+}
+
+button{
+  padding:8px 12px;
+  margin:5px;
+  border:none;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(rgba(30,58,138,0.9),rgba(30,58,138,0.7)),
+  url('https://images.unsplash.com/photo-1523240795612-9a054b0db644') center/cover;
+  color:white;
+}
+
+.hero h2{
+  font-size:28px;
+}
+
+.section{
+  padding:30px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+footer{
+  background:#0f2f6b;
+  color:white;
+  text-align:center;
+  padding:15px;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Future Heros</h1>
+  <p id="tagline">Educational Articles | Creative Works | Resources</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#creations">නිර්මාණ</a>
+  <a href="#resources">Resources</a>
+  <a href="#contact">Contacts</a>
+</nav>
+
+<div class="controls">
+  <button onclick="toggleDark()">🌙 Dark Mode</button>
+  <button onclick="toggleLang()">🌐 Sinhala / English</button>
+</div>
+
+<section class="hero" id="home">
+  <h2 id="heroTitle">Welcome to Future Heros</h2>
+  <p id="heroText">අධ්‍යාපනික ලිපි, නිර්මාණ සහ සම්පත් සඳහා ඔබගේ වේදිකාව</p>
+</section>
+
+<!-- CREATIONS -->
+<section class="section" id="creations">
+  <h2>🎨 <span id="cTitle">නිර්මාණ</span></h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>කවි</h3>
+      <p>නිර්මාණාත්මක කවි එකතුව</p>
+    </div>
+
+    <div class="card">
+      <h3>Short Stories</h3>
+      <p>Creative English & Sinhala stories</p>
+    </div>
+
+    <div class="card">
+      <h3>Essays</h3>
+      <p>Educational essays and articles</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="section" id="resources">
+  <h2>📚 Resources</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Worksheets</h3>
+      <p>Printable learning materials</p>
+    </div>
+
+    <div class="card">
+      <h3>Lesson Plans</h3>
+      <p>Teacher guides and planning sheets</p>
+    </div>
+
+    <div class="card">
+      <h3>Downloads</h3>
+      <p>PDF, PPT, and learning files</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>📞 Contacts</h2>
+
+  <div class="card">
+    <p>Email: futureheros@gmail.com</p>
+    <p>Facebook: Future Heros</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Future Heros | All Rights Reserved</p>
+</footer>
+
+<script>
+let isSinhala = true;
+
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+
+function toggleLang(){
+  isSinhala = !isSinhala;
+
+  if(isSinhala){
+    document.getElementById("heroTitle").innerText = "Welcome to Future Heros";
+    document.getElementById("heroText").innerText = "අධ්‍යාපනික ලිපි, නිර්මාණ සහ සම්පත් සඳහා ඔබගේ වේදිකාව";
+    document.getElementById("cTitle").innerText = "නිර්මාණ";
+    document.getElementById("tagline").innerText = "Educational Articles | Creative Works | Resources";
+  }else{
+    document.getElementById("heroTitle").innerText = "Welcome to Future Heros Platform";
+    document.getElementById("heroText").innerText = "A place for education, creativity and learning resources";
+    document.getElementById("cTitle").innerText = "Creations";
+    document.getElementById("tagline").innerText = "Learning | Creativity | Knowledge";
+  }
+}
+</script>
+
+</body>
+</html>
